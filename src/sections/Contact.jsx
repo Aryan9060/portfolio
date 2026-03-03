@@ -14,6 +14,7 @@ export function Contact({ profile }) {
     message: '',
   })
 
+  // old mailto behaviour left for quick link only – actual submissions use Web3Forms API
   const toEmail = profile?.links?.email || ''
   const canMail = useMemo(() => Boolean(toEmail), [toEmail])
 
@@ -22,7 +23,7 @@ export function Contact({ profile }) {
     setForm((p) => ({ ...p, [name]: value }))
   }
 
-  function onSubmit(e) {
+  async function onSubmit(e) {
     e.preventDefault()
 
     if (!form.name.trim()) {
@@ -41,22 +42,35 @@ export function Contact({ profile }) {
       return
     }
 
-    setStatus({
-      type: 'success',
-      message: canMail
-        ? 'Opening your email app…'
-        : 'Saved! (Add your email in src/data/portfolio.js to enable mailto.)',
-    })
+    // send via Web3Forms
+    setStatus({ type: 'loading', message: 'Sending message…' })
 
-    if (canMail) {
-      const subject = encodeURIComponent(`Portfolio inquiry from ${form.name}`)
-      const body = encodeURIComponent(
-        `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`,
-      )
-      window.location.href = `mailto:${toEmail}?subject=${subject}&body=${body}`
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: '3a27a66b-7860-4ffb-95d8-920e5edce50a',
+          subject: `Portfolio inquiry from ${form.name}`,
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        }),
+      })
+      const data = await res.json()
+      if (data.success) {
+        setStatus({ type: 'success', message: 'Message sent.' })
+        setForm({ name: '', email: '', message: '' })
+      } else {
+        setStatus({
+          type: 'error',
+          message: data.message || 'Something went wrong. Please try again.',
+        })
+      }
+    } catch (err) {
+      console.error(err)
+      setStatus({ type: 'error', message: 'Network error. Please try again.' })
     }
-
-    setForm({ name: '', email: '', message: '' })
   }
 
   const statusStyles =
@@ -64,7 +78,9 @@ export function Contact({ profile }) {
       ? 'border-rose-200 bg-rose-50 text-rose-800'
       : status.type === 'success'
         ? 'border-emerald-200 bg-emerald-50 text-emerald-800'
-        : 'hidden'
+        : status.type === 'loading'
+          ? 'border-slate-200 bg-slate-50 text-slate-800'
+          : 'hidden'
 
   return (
     <section id="contact" className="scroll-mt-20 bg-white py-16 sm:py-20 flex justify-center min-h-dvh">
@@ -185,9 +201,10 @@ export function Contact({ profile }) {
                 </p>
                 <button
                   type="submit"
-                  className="inline-flex h-11 items-center justify-center rounded-full bg-orange-600 px-6 text-sm font-semibold text-white shadow-sm transition hover:bg-orange-700 hover:shadow"
+                  disabled={status.type === 'loading'}
+                  className="inline-flex h-11 items-center justify-center rounded-full bg-orange-600 px-6 text-sm font-semibold text-white shadow-sm transition hover:bg-orange-700 hover:shadow disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send message
+                  {status.type === 'loading' ? 'Sending…' : 'Send message'}
                 </button>
               </div>
             </form>
@@ -197,4 +214,3 @@ export function Contact({ profile }) {
     </section>
   )
 }
-
