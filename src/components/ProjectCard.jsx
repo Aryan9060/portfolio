@@ -22,7 +22,7 @@ export function ProjectCard({ project }) {
           ) : null}
           {project.sourceUrl ? (
             <a
-              className="text-sm font-semibold text-slate-700 hover:text-slate-900"
+              className="text-sm font-semibold text-slate-700 hover:text-orange-600"
               href={project.sourceUrl}
               target={
                 project.sourceUrl.startsWith('http') ? '_blank' : undefined

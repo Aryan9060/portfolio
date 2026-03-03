@@ -6,11 +6,11 @@ export function Blog({ posts }) {
   return (
     <section
       id="blog"
-      className="scroll-mt-20 bg-white py-16 sm:py-20 flex justify-center"
+      className="scroll-mt-20 bg-slate-50 py-16 sm:py-20 flex justify-center"
     >
       <Container>
         <SectionHeading
-          eyebrow="Writing"
+          // eyebrow="Writing"
           title="Blog"
           description="Notes and articles I’ve written while learning and building."
         />

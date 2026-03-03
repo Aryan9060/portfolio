@@ -11,7 +11,7 @@ export function Hero({ profile }) {
         aria-hidden="true"
       />
 
-      <Container className="relative py-16 sm:py-20 min-h-[100vh]">
+      <Container className="relative py-16 sm:py-20 min-h-dvh">
         <div className="mx-auto max-w-3xl text-center">
           {profile.imageUrl ? (
             <div className="mb-6 flex justify-center">

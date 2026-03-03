@@ -32,7 +32,7 @@ export function Navbar({ name = "Portfolio" }) {
   return (
     <header className="sticky top-0 z-50 border-b border-orange-200/80 bg-white/80 backdrop-blur flex justify-center">
       <Container className="flex h-16 mx-5 items-center justify-between ">
-        <a href="#top" className="font-semibold tracking-tight text-slate-900">
+        <a href="#top" className="font-semibold tracking-tight text-slate-900 ">
           {name}
         </a>
 
@@ -41,7 +41,7 @@ export function Navbar({ name = "Portfolio" }) {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-slate-700 hover:text-slate-900"
+              className="text-sm font-medium text-slate-700 hover:text-orange-600 transition"
             >
               {l.label}
             </a>

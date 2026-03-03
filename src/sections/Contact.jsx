@@ -67,7 +67,7 @@ export function Contact({ profile }) {
         : 'hidden'
 
   return (
-    <section id="contact" className="scroll-mt-20 bg-slate-50 py-16 sm:py-20 flex justify-center">
+    <section id="contact" className="scroll-mt-20 bg-white py-16 sm:py-20 flex justify-center min-h-dvh">
       <Container>
         <SectionHeading
           eyebrow="Contact"
@@ -75,8 +75,8 @@ export function Contact({ profile }) {
           description="Send a message and I’ll get back to you soon."
         />
 
-        <div className="mx-auto mt-10 grid max-w-4xl gap-6 lg:grid-cols-5">
-          <div className="lg:col-span-2">
+        <div className="mx-auto mt-10 grid max-w-4xl gap-6 lg:grid-cols-5 justify-center">
+          <div className="lg:col-span-2 ">
             <div className="rounded-2xl border border-orange-200 bg-white p-6 shadow-sm">
               <h3 className="text-base font-semibold text-slate-900">
                 Quick links

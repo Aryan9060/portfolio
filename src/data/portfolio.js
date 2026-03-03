@@ -27,8 +27,8 @@ export const projects = [
     description:
       'A responsive portfolio website showcasing projects, skills, and a contact form.',
     tags: ['React', 'TailwindCSS', 'Vite'],
-    liveUrl: '#',
-    sourceUrl: '#',
+    liveUrl: 'https://portfolio-omega-lyart-32.vercel.app',
+    sourceUrl: 'https://github.com/Aryan9060/portfolio',
   },
   {
     title: 'Project Showcase',
