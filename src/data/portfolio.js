@@ -31,9 +31,9 @@ export const projects = [
     sourceUrl: "https://github.com/Aryan9060/portfolio",
   },
   {
-    title: "Project Showcase",
+    title: "Gaminig-Zone",
     description:
-      "A clean gallery layout with filters, cards, and mobile-friendly navigation.",
+      "Gaming Zone is a clean and interactive web-based gaming hub where users can enjoy classic mini games directly in their browser — no downloads required!",
     tags: ["HTML", "CSS", "JavaScript"],
     liveUrl: "https://gaminig-zone.vercel.app",
     sourceUrl: "https://github.com/Aryan9060/Gaminig-Zone",

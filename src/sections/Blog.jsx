@@ -15,7 +15,7 @@ export function Blog({ posts }) {
           description="Notes and articles I’ve written while learning and building."
         />
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3 justify-center">
           {posts.map((p) => (
             <BlogCard key={p.url} post={p} />
           ))}
