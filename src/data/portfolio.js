@@ -39,12 +39,13 @@ export const projects = [
     sourceUrl: "https://github.com/Aryan9060/Gaminig-Zone",
   },
   {
-    title: "Contact Form UI",
+    title: "ToDo Boards",
     description:
-      "A friendly contact experience with validation and accessible form controls.",
-    tags: ["Accessibility", "UX"],
-    liveUrl: "#",
-    sourceUrl: "#",
+      "The TODO Board is a simple and intuitive task management web application designed to help users organize their daily activities efficiently. It provides a clean interface where users can easily create, manage, and track their tasks in real time.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    liveUrl: "https://cohort-mini-project-6kgq.vercel.app",
+    sourceUrl:
+      "https://github.com/Aryan9060/Cohort-mini-project/tree/master/ToDo%20Board/src",
   },
 ];
 
