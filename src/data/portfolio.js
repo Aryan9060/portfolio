@@ -23,6 +23,34 @@ export const profile = {
 
 export const projects = [
   {
+    title: "Chai Tailwind",
+    description:
+      "“Chai Tailwind” is a creative frontend project focused on building clean, modern, and responsive UI using pure CSS. It showcases different styling techniques, layouts, and design patterns that help developers understand CSS in a practical and visually engaging way. The project emphasizes simplicity, creativity, and real-world UI building skills. 🚀",
+    tags: ["HTML", "CSS", "JavaScript"],
+    liveUrl: "https://chai-aur-css.vercel.app",
+    sourceUrl:
+      "https://github.com/divaaditi101-dev/chai-tailwind/tree/main/my-project/src",
+  },
+  {
+    title: "ToDo Boards",
+    description:
+      "The TODO Board is a simple and intuitive task management web application designed to help users organize their daily activities efficiently. It provides a clean interface where users can easily create, manage, and track their tasks in real time.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    liveUrl: "https://cohort-mini-project-6kgq.vercel.app",
+    sourceUrl:
+      "https://github.com/Aryan9060/Cohort-mini-project/tree/master/ToDo%20Board/src",
+  },
+  {
+    title: "Color Palette Generator",
+    description:
+      "Color Palette Generator” is a simple and interactive tool that helps designers and developers create beautiful and cohesive color combinations instantly. It allows users to generate palettes, explore different shades, and quickly pick the perfect colors for their projects, making UI design faster and more efficient. 🎨",
+    tags: ["HTML", "CSS", "JavaScript"],
+    liveUrl: "https://color-palette-generator-ashen.vercel.app",
+    sourceUrl:
+      "https://github.com/Aryan9060/Cohort-mini-project/tree/master/color%20palette%20generator",
+  },
+
+  {
     title: "Personal Portfolio Website",
     description:
       "A responsive portfolio website showcasing projects, skills, and a contact form.",
@@ -38,21 +66,16 @@ export const projects = [
     liveUrl: "https://gaminig-zone.vercel.app",
     sourceUrl: "https://github.com/Aryan9060/Gaminig-Zone",
   },
-  {
-    title: "ToDo Boards",
-    description:
-      "The TODO Board is a simple and intuitive task management web application designed to help users organize their daily activities efficiently. It provides a clean interface where users can easily create, manage, and track their tasks in real time.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    liveUrl: "https://cohort-mini-project-6kgq.vercel.app",
-    sourceUrl:
-      "https://github.com/Aryan9060/Cohort-mini-project/tree/master/ToDo%20Board/src",
-  },
 ];
 
 export const skills = [
   "HTML",
   "CSS",
   "JavaScript",
+  "TypeScript",
+  "Next.js",
+  "Express",
+  "Vite",
   "React",
   "TailwindCSS",
   "Responsive Design",
